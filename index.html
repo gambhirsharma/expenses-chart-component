@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses chart component</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="flex column">
+      <div class="loader flex center justify">
+        <div class="icon flex center justify">
+          <img id="logo" src="./images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="balance-container flex card center between">
+        <img src="./images/logo.svg" alt="">
+        <div class="balance-container__details">
+          <p>My balance</p>
+          <p>$921.48</p>
+        </div>
+      </div>
+      <div class="chart-container card flex column">
+        <h1>Spending - Last 7 days</h1>
+        <div class="statsList" id="statsList">
+          <!-- here the chart -->
+        </div>
+        <div class="chart-container__separator">
+        </div>
+        <div class="chart-container__info flex between">
+          <div class="chart-container__info--current">
+            <p>Total this month</p>
+            <p>$478.33</p>
+          </div>
+          <div class="chart-container__info--last">
+            <p>+2.4%</p>
+            <p>from last month</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

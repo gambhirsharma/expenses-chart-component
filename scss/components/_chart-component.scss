@@ -1,0 +1,110 @@
+main {
+  width: fit-content;
+  margin: 5em auto;
+  max-width: 90%;
+  .balance-container {
+      animation: appear 1s ease 3.5s forwards;
+      opacity: 0;
+      background-color: $softRed;
+      color: $cardWhite;
+      flex-direction: row-reverse;
+      img {
+          &:hover {
+              animation: spin 1.5s ease forwards;
+              cursor: pointer;
+          }
+      }
+      p:nth-child(2) {
+          font-size: 1.6em;
+          font-weight: 700;
+          &:hover {
+              cursor: pointer;
+          }
+      }   
+  }
+  .chart-container {
+      animation: appear 2s ease 4s forwards;
+      opacity: 0;
+      background-color: $cardWhite;
+      border-radius: 20px;
+      .statsList {
+          height: 9em;
+          margin: 2em 0em 0.2em 0em;
+          gap: 0.8em;
+          .container {
+              width: 2.3em;
+              height: 100%;
+              gap: 0.8em;
+              .barContainer {
+                  flex-direction: column-reverse;
+                  width: 100%;
+                  .bar {
+                      background-color: $softRed;
+                      width: 100%;
+                      border-radius: 5px;
+                      position: relative;
+                      &:hover::before {
+                          content: attr(data-barStat);
+                          width: 3em;
+                          font-weight: 700;
+                          font-size: 0.8em;
+                          color: $cardWhite;
+                          padding: 0.6em 0.7em 0.6em 0.7em;
+                          background-color: $darkBrown;
+                          border-radius: 5px;
+                          position: absolute;
+                          top: -2.2rem;
+                          margin-left: -0.6rem;
+                      }
+                      &:hover {
+                          cursor: pointer;
+                          background-color: $hoverRed;
+                      }
+                  }
+                  #max {
+                      background-color: $cyan;
+                      &:hover {
+                          background-color: $hoverCyan;
+                      }
+                  }
+              }
+              .day {
+                  color: $mediumBrown;
+                  text-align: center;
+                  font-size: 0.8em;
+              }
+          }
+      }
+      &__separator {
+          border: 1px solid $cream;
+          width: 100%;
+          margin: 0.5em 0em 0.5em 0em;
+      }
+      &__info {
+          color: $mediumBrown;
+          align-items: flex-end;
+          margin: 0.3em 0em 0.7em 0em;
+          &--last {
+              p:nth-child(1) {
+                  font-weight: 700;
+                  color: $darkBrown;
+                  text-align: end;
+              }
+              &:hover {
+                  cursor: pointer;
+              }
+          }
+          &--current {
+              p:nth-child(2) {
+                  font-size: 2.3em;
+                  font-weight: 700;
+                  color: $darkBrown;
+                  text-align: start;
+              }
+              &:hover {
+                  cursor: pointer;
+              }
+          }
+      }
+  }
+}

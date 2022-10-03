@@ -1,0 +1,204 @@
+/* Colors */
+/* Primary */
+/* Neutral */
+/* Hover */
+/** Component animation **/
+@keyframes appear {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/** Loader Disappear **/
+@keyframes dis {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+* {
+  font-family: "DM Sans";
+}
+
+body {
+  background-color: hsl(27deg, 66%, 92%);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  margin: auto 0.5em;
+  margin-top: 0.3em;
+}
+
+p {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: auto;
+  line-height: 1.2em;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
+/* Flex */
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.justify {
+  justify-content: center;
+}
+
+/* Loader */
+.loader {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: hsl(10deg, 79%, 65%);
+  animation: dis 1s forwards 2.6s;
+}
+.loader .icon {
+  animation: spin 1.5s forwards 0.5s;
+}
+.loader .icon #logo {
+  width: 8em;
+}
+
+main {
+  width: fit-content;
+  margin: 5em auto;
+  max-width: 90%;
+}
+main .balance-container {
+  animation: appear 1s ease 3.5s forwards;
+  opacity: 0;
+  background-color: hsl(10deg, 79%, 65%);
+  color: #FFFBF6;
+  flex-direction: row-reverse;
+}
+main .balance-container img:hover {
+  animation: spin 1.5s ease forwards;
+  cursor: pointer;
+}
+main .balance-container p:nth-child(2) {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+main .balance-container p:nth-child(2):hover {
+  cursor: pointer;
+}
+main .chart-container {
+  animation: appear 2s ease 4s forwards;
+  opacity: 0;
+  background-color: #FFFBF6;
+  border-radius: 20px;
+}
+main .chart-container .statsList {
+  height: 9em;
+  margin: 2em 0em 0.2em 0em;
+  gap: 0.8em;
+}
+main .chart-container .statsList .container {
+  width: 2.3em;
+  height: 100%;
+  gap: 0.8em;
+}
+main .chart-container .statsList .container .barContainer {
+  flex-direction: column-reverse;
+  width: 100%;
+}
+main .chart-container .statsList .container .barContainer .bar {
+  background-color: hsl(10deg, 79%, 65%);
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+main .chart-container .statsList .container .barContainer .bar:hover::before {
+  content: attr(data-barStat);
+  width: 3em;
+  font-weight: 700;
+  font-size: 0.8em;
+  color: #FFFBF6;
+  padding: 0.6em 0.7em 0.6em 0.7em;
+  background-color: hsl(25deg, 47%, 15%);
+  border-radius: 5px;
+  position: absolute;
+  top: -2.2rem;
+  margin-left: -0.6rem;
+}
+main .chart-container .statsList .container .barContainer .bar:hover {
+  cursor: pointer;
+  background-color: #FF9B86;
+}
+main .chart-container .statsList .container .barContainer #max {
+  background-color: hsl(186deg, 34%, 60%);
+}
+main .chart-container .statsList .container .barContainer #max:hover {
+  background-color: #B4E0E5;
+}
+main .chart-container .statsList .container .day {
+  color: hsl(27deg, 10%, 52%);
+  text-align: center;
+  font-size: 0.8em;
+}
+main .chart-container__separator {
+  border: 1px solid hsl(27deg, 66%, 92%);
+  width: 100%;
+  margin: 0.5em 0em 0.5em 0em;
+}
+main .chart-container__info {
+  color: hsl(27deg, 10%, 52%);
+  align-items: flex-end;
+  margin: 0.3em 0em 0.7em 0em;
+}
+main .chart-container__info--last p:nth-child(1) {
+  font-weight: 700;
+  color: hsl(25deg, 47%, 15%);
+  text-align: end;
+}
+main .chart-container__info--last:hover {
+  cursor: pointer;
+}
+main .chart-container__info--current p:nth-child(2) {
+  font-size: 2.3em;
+  font-weight: 700;
+  color: hsl(25deg, 47%, 15%);
+  text-align: start;
+}
+main .chart-container__info--current:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

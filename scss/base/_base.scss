@@ -1,0 +1,67 @@
+* {
+  font-family: "DM Sans";
+}
+
+body {
+  background-color: $cream;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+font-size: 1.7em;
+font-weight: 700;
+margin: auto 0.5em;
+margin-top: 0.3em;
+}
+
+p {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: auto;
+  line-height: 1.2em;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
+/* Flex */
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.justify {
+  justify-content: center;
+}
+
+/* Loader */
+.loader {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: $softRed;
+  animation: dis 1s forwards 2.6s;
+  .icon {
+      animation: spin 1.5s forwards 0.5s;
+      #logo {
+          width: 8em;
+      }
+  }
+}
